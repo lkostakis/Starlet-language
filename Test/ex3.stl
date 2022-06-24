@@ -1,0 +1,25 @@
+program ex3
+	
+	declare a,b,c ;
+	
+	function fun(inandout x,inandout y)
+		x := x+2 ;
+		a := x*y ;
+		x := x+1 ;
+		
+		print x ;
+		print y ;
+		
+		return x ;
+	endfunction
+	
+	a := 1 ;
+	b := 2 ;
+	
+	c := fun(inandout a, inandout b);
+	
+	print a ;
+	print b ;
+
+	
+endprogram

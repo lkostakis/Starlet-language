@@ -1,0 +1,41 @@
+program ex6
+	
+	declare a,b,c,k,w ;
+	
+	function P1(in x,inout y)
+		
+		declare a;
+		
+		
+		function F11(in x)
+			declare a ;
+			
+			b:=a ;
+			a:=x ;
+			c:= F11(in x) ;
+			return c ;
+		endfunction
+		
+		function F21(in x)
+			c := F11(in x) ;
+			return c ;
+			
+		endfunction
+	
+		return a ;		
+	endfunction
+	
+	
+	function P2(inout y)
+		declare x ;
+		y := 1 ;
+		w := P1(in x,inout y);
+		
+		return w ;
+	endfunction
+	
+	
+	k := P1(in a,inout b) ;
+	w := P2(inout c) ;
+	
+endprogram

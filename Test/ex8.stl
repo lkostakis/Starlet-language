@@ -1,0 +1,21 @@
+program ex8
+	
+	declare n,c ;
+	
+	function fun(inandout k)
+		n := n+1 ;
+		k := k+4 ;
+		
+		print n ;
+		
+		return n ;
+	endfunction
+	
+	n := 0 ;
+	
+	c := fun(inandout n);
+	
+	print n ;
+
+	
+endprogram

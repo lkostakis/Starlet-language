@@ -1,0 +1,25 @@
+program ex1
+	
+	declare a,b,c ;
+	
+	function fun(in x,in y)
+		x := x+y ;
+		y := x-y ;
+		x := x-y ;
+		
+		print x ;
+		print y ;
+		
+		return x ;
+	endfunction
+	
+	a := 5 ;
+	b := 3 ;
+	
+	c := fun(in a, in b);
+	
+	print a ;
+	print b ;
+
+	
+endprogram

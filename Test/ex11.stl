@@ -1,0 +1,37 @@
+program ex11
+	
+	declare a,b,k ;
+	
+	function P1(in x,in y)
+		
+		declare c,d ;
+		
+		function P11(inandout k,in l)
+			k := k + 10 ;
+			l := l + 10 ;
+			print k ;
+			print l ;
+			
+			return k ;
+		endfunction
+		
+		d := P11(inandout a,in b) ;
+		print a ;
+		print b ;
+		x := x + 20 ;
+		y := y + 20 ;
+		print x ;
+		print y ;
+
+		
+		return y ;
+		
+	endfunction
+	
+	a := 0 ;
+	b := 0 ;
+	k := P1(in a,in b) ;
+	print a ;
+	print b ;
+
+endprogram

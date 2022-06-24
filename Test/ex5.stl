@@ -1,0 +1,39 @@
+program ex5
+	
+	declare a,b,k ;
+	
+	function P1(in x,inout y)
+		
+		declare c,d ;
+		
+		
+		function P11(in w,inout z)
+			declare e ;
+			
+			function P21(in x)
+				e := x;
+				z := w;
+				e:= P21(in a);
+				return e
+				
+			endfunction
+			
+			e := z ;
+			z := w ;
+			e := P21(in c) ;
+			return e ;
+			
+		
+		endfunction
+		
+		b := 100 ;
+		c := P11(in c,inout b) ;
+		y := b + c ;
+		
+		return y ;
+		
+	endfunction
+	
+	k := P1(in a,inout b) ;
+	
+endprogram

@@ -1,0 +1,26 @@
+program ex10
+	
+	declare a,b,c ;
+	
+	function fun(inandout x,in y)
+		x := x+2 ;
+		a := x*y ;
+		x := x+1 ;
+		y := 20 ;
+		
+		print x ;
+		print y ;
+		
+		return x ;
+	endfunction
+	
+	a := 1 ;
+	b := 2 ;
+	
+	c := fun(inandout a, in b);
+	
+	print a ;
+	print b ;
+
+	
+endprogram

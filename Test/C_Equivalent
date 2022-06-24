@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+int fun()
+{
+	int T_1, T_2, T_3, a, x, y;
+	L_0:
+	L_1: T_1 = x + 2;
+	L_2: x = T_1;
+	L_3: T_2 = x * y;
+	L_4: a = T_2;
+	L_5: T_3 = x + 1;
+	L_6: x = T_3;
+	L_7: printf("%d\n", x);
+	L_8: printf("%d\n", y);
+	L_9: return (x);
+	L_10: {}
+}
+
+int main(void)
+{
+	int T_4, a, b, c;
+	L_11:
+	L_12: a = 1;
+	L_13: b = 2;
+	L_17: fun();
+	L_18: c = T_4;
+	L_19: printf("%d\n", a);
+	L_20: printf("%d\n", b);
+	L_21: return 0;
+	L_22: {}
+}
+

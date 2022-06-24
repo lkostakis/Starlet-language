@@ -1,0 +1,122 @@
+    .data
+     newline: .asciiz "\n"
+    .globl L_11
+    .text
+
+    j       L_11   # main program
+        
+L_0:   #0: (begin_block, fun, _, _)
+    sw      $ra, 0($sp)
+
+L_1:   #1: (+, x, 2, T_1)
+    lw      $t1, -12($sp)
+    li      $t2, 2
+    add     $t1, $t1, $t2
+    sw      $t1, -20($sp)
+
+L_2:   #2: (:=, T_1, _, x)
+    lw      $t1, -20($sp)
+    sw      $t1, -12($sp)
+
+L_3:   #3: (*, x, y, T_2)
+    lw      $t1, -12($sp)
+    lw      $t2, -16($sp)
+    mul     $t1, $t1, $t2
+    sw      $t1, -24($sp)
+
+L_4:   #4: (:=, T_2, _, a)
+    lw      $t1, -24($sp)
+    sw      $t1, -12($s0)
+
+L_5:   #5: (+, x, 1, T_3)
+    lw      $t1, -12($sp)
+    li      $t2, 1
+    add     $t1, $t1, $t2
+    sw      $t1, -28($sp)
+
+L_6:   #6: (:=, T_3, _, x)
+    lw      $t1, -28($sp)
+    sw      $t1, -12($sp)
+
+L_7:   #7: (out, x, _, _)
+    lw      $t9, -12($sp)
+    li      $v0, 1
+    add     $a0, $zero, $t9
+    syscall   # service code 1: print integer
+    la      $a0, newline
+    li      $v0, 4
+    syscall   # service code 4: print (a null terminated) string
+
+L_8:   #8: (out, y, _, _)
+    lw      $t9, -16($sp)
+    li      $v0, 1
+    add     $a0, $zero, $t9
+    syscall   # service code 1: print integer
+    la      $a0, newline
+    li      $v0, 4
+    syscall   # service code 4: print (a null terminated) string
+
+L_9:   #9: (retv, x, _, _)
+    lw      $t1, -12($sp)
+    lw      $t0, -8($sp)
+    sw      $t1, 0($t0)
+    lw      $ra, 0($sp)
+    jr      $ra
+
+L_11:   #11: (begin_block, ex3, _, _)
+    sw      $ra, 0($sp)
+    move    $s0, $sp
+
+L_12:   #12: (:=, 1, _, a)
+    li      $t1, 1
+    sw      $t1, -12($s0)
+
+L_13:   #13: (:=, 2, _, b)
+    li      $t1, 2
+    sw      $t1, -16($s0)
+
+L_14:   #14: (par, a, CP, _)
+    addi    $fp, $sp, -28
+    lw      $t0, -12($s0)
+    sw      $t0, -12($fp)
+
+L_15:   #15: (par, b, CP, _)
+    lw      $t0, -16($s0)
+    sw      $t0, -16($fp)
+
+L_16:   #16: (par, T_4, RET, _)
+    addi    $t0, $sp, -24
+    sw      $t0, -8($fp)
+
+L_17:   #17: (call, fun, _, _)
+    lw      $t0, -4($sp)
+    sw      $t0, -4($fp)
+    addi    $sp, $sp, -28
+    jal     L_0
+    lw    $t1, -16($fp)
+    sw      $t1, -16($s0)
+    lw    $t1, -12($fp)
+    sw      $t1, -12($s0)
+    addi    $sp, $sp, 28
+
+L_18:   #18: (:=, T_4, _, c)
+    lw      $t1, -24($sp)
+    sw      $t1, -20($s0)
+
+L_19:   #19: (out, a, _, _)
+    lw      $t9, -12($s0)
+    li      $v0, 1
+    add     $a0, $zero, $t9
+    syscall   # service code 1: print integer
+    la      $a0, newline
+    li      $v0, 4
+    syscall   # service code 4: print (a null terminated) string
+
+L_20:   #20: (out, b, _, _)
+    lw      $t9, -16($s0)
+    li      $v0, 1
+    add     $a0, $zero, $t9
+    syscall   # service code 1: print integer
+    la      $a0, newline
+    li      $v0, 4
+    syscall   # service code 4: print (a null terminated) string

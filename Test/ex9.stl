@@ -1,0 +1,19 @@
+program ex9
+	
+	declare n,c ;
+	
+	function fun()
+		n := n+1 ;
+		print n ;
+		
+		return n ;
+	endfunction
+	
+	n := 0 ;
+	
+	c := fun();
+	
+	print n ;
+
+	
+endprogram
